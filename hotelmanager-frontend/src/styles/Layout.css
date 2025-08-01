@@ -1,0 +1,29 @@
+/* Layout container */
+.layout-container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột */
+  height: 100vh; /* Chiều cao toàn màn hình */
+}
+
+/* Header */
+.layout-container > header {
+  display: flex;
+  flex: 1; /* Header có chiều cao cố định là 60px */
+  background-color: #f8f9fa; /* Màu nền cho Header */
+  z-index: 10; /* Đảm bảo Header luôn nằm trên */
+}
+
+/* Routes */
+.layout-container > .content {
+  display: flex;
+
+  flex: 1 auto; /* Routes chiếm phần còn lại của chiều cao */
+  overflow-y: auto;
+  background-color: #ffffff; /* Màu nền cho Routes */
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #ccc;
+}

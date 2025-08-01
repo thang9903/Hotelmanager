@@ -1,0 +1,756 @@
+/* Booking Page */
+.booking-detail-page {
+  background-color: #f4f4f4; /* Màu nền nhạt */
+  padding: 16px 0;
+  margin-top: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.booking-detail-container {
+  display: flex;
+  flex-direction: column; /* Xếp các phần tử theo cột */
+  flex: 1; /* Chiếm toàn bộ không gian còn lại */
+  height: 100%;
+}
+
+/* Customer Info */
+.booking-detail-page .customer-info {
+  display: flex; /* Sử dụng Flexbox thay vì Grid */
+  flex-direction: row;
+  gap: 8px;
+  flex: 0 0 auto;
+  margin-bottom: 8px;
+  border: 1px solid rgb(223, 222, 222); /* Viền nhạt */
+  border-radius: 8px;
+  padding: 8px;
+  background-color: white;
+}
+
+.customer-section,
+.guest-section,
+.sales-channel,
+.channel-code,
+.price-list {
+  padding: 0px 16px;
+  border-right: 1px solid rgb(223, 222, 222); /* Viền bên trái */
+  background-color: #ffffff;
+  min-width: 300px;
+}
+
+.notes-section {
+  padding: 0px 16px;
+  border-right: 1px solid rgb(223, 222, 222); /* Viền bên trái */
+  background-color: #ffffff;
+  width: 100%;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151; /* Màu chữ đậm */
+  margin-bottom: 4px;
+}
+
+.booking-detail-page .search-customer {
+  position: relative;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 4px 12px;
+  align-items: center;
+  gap: 4px;
+  background-color: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.booking-detail-page .search-customer:hover {
+  border-color: #10b981;
+  background-color: #ffffff;
+}
+
+.booking-detail-page .customer-info-details {
+  flex: 1;
+}
+
+.booking-detail-page .customer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 4px; */
+  align-items: start;
+  flex-direction: column;
+}
+
+.booking-detail-page .customer-contact span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+  padding: 4px 8px;
+  /* font-weight: 600; */
+}
+
+.booking-detail-page .customer-contact i {
+  font-size: 12px;
+}
+
+.booking-detail-page .customer-name {
+  font-weight: 600;
+}
+
+.booking-detail-page .customer-phone i {
+  color: #3b82f6;
+}
+
+.booking-detail-page .customer-cccd i {
+  color: #10b981;
+}
+
+.booking-detail-page .search-customer > button {
+  border: none;
+  background: none;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-detail-page .search-customer > button:hover {
+  background-color: #f3f4f6;
+}
+
+.booking-detail-page .search-customer > button i {
+  font-size: 16px;
+  color: #6b7280;
+  transition: color 0.2s ease;
+}
+
+.booking-detail-page .search-customer > button:hover i {
+  color: #10b981;
+}
+
+.booking-detail-page .search-customer > button:last-child:hover i {
+  color: #ef4444;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-field {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #10b981; /* Màu xanh lá khi focus */
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2); /* Hiệu ứng focus */
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+}
+
+.edit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+}
+
+.add-button:hover {
+  background-color: #059669; /* Màu xanh lá đậm khi hover */
+}
+
+/* Guest Info */
+.guest-info {
+  display: flex;
+  gap: 16px;
+}
+
+.guest-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.icon {
+  color: #6b7280; /* Màu xám nhạt cho icon */
+}
+
+/* Dropdown */
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #374151;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #f3f4f6; /* Màu nền nhạt khi hover */
+}
+
+/* Main Content */
+.main-content {
+  display: flex; /* Sử dụng Flexbox để đặt các phần tử trên cùng một dòng */
+  gap: 16px; /* Khoảng cách giữa sidebar và content */
+  align-items: stretch; /* Đảm bảo các phần tử con có chiều cao bằng nhau */
+  height: 100%; /* Đảm bảo chiều cao 100% */
+  flex: 1;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 2; /* Sidebar chiếm 2 phần không gian */
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Đảm bảo chiều cao 100% */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Đảm bảo nội dung bên trong sắp xếp theo chiều dọc */
+}
+
+.sidebar > h3 {
+  margin-bottom: 8px;
+}
+
+.service-card > i {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content-detail {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  flex: 3;
+}
+
+/* Content */
+.content {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  flex: 3; /* Content chiếm 3 phần không gian */
+  background-color: #ffffff; /* Màu nền trắng */
+  border: 1px solid #e5e7eb; /* Viền nhạt */
+  border-radius: 8px; /* Bo góc */
+  padding: 16px; /* Khoảng cách bên trong */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+  height: 100%; /* Chiều cao 100% */
+  overflow: hidden; /* Ẩn nội dung tràn */
+}
+
+/* Content Header */
+.content-header {
+  display: flex;
+  justify-content: space-between; /* Căn đều hai bên */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding-bottom: 16px; /* Khoảng cách dưới */
+  border-bottom: 1px solid #e5e7eb; /* Viền ngăn cách */
+  margin-bottom: 16px; /* Khoảng cách với phần body */
+}
+
+/* Content Body */
+.content-body {
+  flex: 1; /* Chiếm toàn bộ không gian còn lại */
+  overflow-y: auto; /* Thêm thanh cuộn nếu nội dung quá dài */
+  padding: 8px; /* Khoảng cách bên trong */
+  background-color: #f9fafb; /* Màu nền nhạt */
+  border-radius: 8px; /* Bo góc */
+}
+
+/* Content Footer */
+.content-footer {
+  display: flex;
+  justify-content: end; /* Căn đều hai bên */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  /* padding: 16px;  */
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb; /* Viền ngăn cách */
+  background-color: #ffffff; /* Màu nền trắng */
+  border-radius: 8px; /* Bo góc */
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: 600; /* Chữ đậm */
+  color: #374151; /* Màu chữ */
+  gap: 32px; /* Khoảng cách giữa các phần tử */
+  padding-right: 16px;
+}
+
+.content-footer span {
+  color: #10b981; /* Màu xanh lá cho tổng tiền */
+  font-weight: bold; /* Chữ đậm */
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.tab-button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Room Details */
+.room-details {
+  margin-bottom: 24px;
+}
+
+.room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+.room-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.room-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.table td {
+  font-size: 14px;
+  color: #374151;
+}
+
+.table tbody tr:hover {
+  background-color: #f9fafb; /* Màu nền nhạt khi hover */
+}
+
+/* Notes */
+.notes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.notes .input-field {
+  flex: 1;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.notes .input-field:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.main-content-detail .content-body .room-details {
+  background-color: #ffffff; /* Màu nền trắng */
+  padding: 4px 16px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  border: 1px solid #e5e7eb; /* Viền nhạt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+.room-details .table-header {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 2fr 2fr 3fr 3fr; /* Tỷ lệ cột: Loại phòng (2 phần), Giá (1 phần mỗi cột) */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: start;
+  background-color: white; /* Màu nền nhạt */
+  padding: 0px; /* Khoảng cách bên trong */
+  border-radius: 12px; /* Bo góc */
+  font-weight: bolder; /* Chữ đậm */
+  color: #374151; /* Màu chữ */
+}
+
+.room-details .table-row {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 2fr 2fr 3fr 3fr;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+  padding: 0px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  border: 0px solid #e5e7eb; /* Viền nhạt */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng khi hover */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.room-details .table-body {
+  overflow-y: unset;
+}
+
+.room-items .table-header {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 2fr 2fr 2fr 3fr 3fr; /* Tỷ lệ cột: Loại phòng (2 phần), Giá (1 phần mỗi cột) */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: start;
+  background-color: white; /* Màu nền nhạt */
+  padding: 0px; /* Khoảng cách bên trong */
+  border-radius: 12px; /* Bo góc */
+  font-weight: bolder; /* Chữ đậm */
+  color: #374151; /* Màu chữ */
+}
+
+.room-items .table-row {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 2fr 2fr 2fr 3fr 3fr;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+  padding: 0px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  border: 0px solid #e5e7eb; /* Viền nhạt */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng khi hover */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.room-items {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  margin-top: 8px; /* Khoảng cách trên */
+  max-height: 250px;
+}
+
+.room-items .table-header {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 1fr 4fr 3fr 3fr 3fr 1fr; /* Tỷ lệ cột: Loại phòng (2 phần), Giá (1 phần mỗi cột) */
+  min-height: 48px;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: start;
+  background-color: #e9f5ee; /* Màu nền nhạt */
+  padding: 10px 16px; /* Khoảng cách bên trong */
+  border-radius: 12px; /* Bo góc */
+  font-weight: bolder; /* Chữ đậm */
+  color: #374151; /* Màu chữ */
+}
+.room-items .table-row {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 1fr 4fr 3fr 3fr 3fr 1fr;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+  padding: 12px 16px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  border: 1px solid #e5e7eb; /* Viền nhạt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng khi hover */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.room-items .table-row div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/*date time */
+.content-body .date-time-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin: 24px 0px;
+}
+
+.content-body.date-time-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-body .date-time-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+.content-body .input-date {
+  padding: 10px 14px;
+  max-width: 250px;
+  margin: 0px 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.content-body .input-date:focus {
+  outline: none;
+  border-color: #10b981; /* green-500 */
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+@media (max-width: 640px) {
+  .content-body .date-time-container {
+    flex-direction: column;
+  }
+}
+
+.content-body .delete-btn {
+  background: none;
+  border: none;
+  color: #ef4444; /* Màu đỏ */
+  cursor: pointer;
+  font-size: 16px; /* Kích thước biểu tượng */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s;
+}
+
+/* Footer Container */
+.content-detail-footer {
+  display: flex;
+  justify-content: flex-end; /* Căn các nút về phía bên phải */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 16px; /* Khoảng cách bên trong */
+  border-top: 1px solid #e5e7eb; /* Viền ngăn cách phía trên */
+  background-color: #ffffff; /* Màu nền trắng */
+  margin-top: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Footer Buttons Container */
+.footer-buttons {
+  display: flex;
+  gap: 16px; /* Khoảng cách giữa các nút */
+}
+
+/* Buttons */
+.footer-buttons .add-button {
+  background-color: #10b981; /* Màu xanh lá */
+  color: #ffffff; /* Màu chữ trắng */
+  border: none;
+  border-radius: 4px; /* Bo góc */
+  padding: 8px 16px; /* Khoảng cách bên trong nút */
+  font-size: 14px; /* Kích thước chữ */
+  font-weight: 600; /* Chữ đậm */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+/* Hover Effect for Buttons */
+.footer-buttons .add-button:hover {
+  background-color: #059669; /* Màu xanh lá đậm khi hover */
+}
+
+/* Cancel Button */
+.footer-buttons .add-button:first-child {
+  background-color: #ff8800; /* Màu đỏ cho nút Hủy */
+}
+
+.footer-buttons .add-button:first-child:hover {
+  background-color: #df9138; /* Màu đỏ đậm khi hover */
+}
+
+.booking-detail-page .channel-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  padding: 16px;
+  gap: 8px;
+}
+
+.booking-detail-page .channel-selected:hover {
+  background-color: #e5e7eb;
+}
+
+/* Dropdown menu */
+.booking-detail-page .channel-options {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 200px;
+  padding: 8px 0;
+}
+
+/* Dropdown option */
+.booking-detail-page .channel-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-detail-page .channel-option:hover {
+  background-color: #f3f4f6;
+}
+
+.booking-detail-page .channel-option i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.booking-detail-page .channel-option span {
+  font-size: 14px;
+  color: #374151;
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.service-card:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+}
+
+.service-card > i {
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: white;
+}
+
+.service-card .fa-hand-holding-heart {
+  background-color: #ff6b6b; /* đỏ hồng - dịch vụ */
+}
+
+.service-card .fa-utensils {
+  background-color: #4ecdc4; /* xanh ngọc - đồ ăn */
+}
+
+.service-card .fa-mug-hot {
+  background-color: #ffa502; /* cam - nước uống */
+}
+
+.service-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.service-info p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #666;
+}

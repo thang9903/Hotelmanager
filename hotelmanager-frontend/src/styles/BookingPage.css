@@ -1,0 +1,471 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 64px;
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu */
+  padding: 64px 16px;
+}
+/* Header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 4px;
+}
+
+/* Header title */
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+/* Header actions container */
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Search input */
+.search-input {
+  width: 300px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #39ac69;
+}
+
+/* Add button */
+.add-button {
+  padding: 8px 16px;
+  background-color: #39ac69;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #279656;
+}
+
+/* Tabs container */
+.booking-page .tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Tab item */
+.booking-page .tab {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Khoảng cách giữa chấm tròn và text */
+  padding: 8px 16px;
+  background-color: #f6f6f6;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #9e9999;
+  font-weight: 600;
+  color: #7d828a;
+}
+
+.tab:hover {
+  background-color: #b0fbd4;
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+/* Tab icon (chấm tròn) */
+.tab-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* Màu sắc cho từng tab */
+.tab-icon.available {
+  background-color: #afafaf;
+}
+
+.tab-icon.pending {
+  background-color: #ff8800;
+}
+
+.tab-icon.in-use {
+  background-color: #279656;
+}
+
+.tab-icon.all {
+  background-color: #1d77c1;
+}
+
+.grid-card {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px; /* Khoảng cách giữa các card */
+}
+
+@media (max-width: 1024px) {
+  .grid-card {
+    grid-template-columns: repeat(4, 1fr); /* 4 cột trên màn hình lớn vừa */
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-card {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột trên màn hình nhỏ */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-card {
+    grid-template-columns: 1fr; /* 1 cột trên màn hình rất nhỏ */
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px; /* Bo góc mềm mại hơn */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-height: 210px;
+  border: 1px solid transparent; /* Viền mặc định trong suốt */
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Nâng lên khi hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+  border-color: #15e48e; /* Thay đổi màu viền khi hover */
+}
+
+/* Card trạng thái trống */
+.card.available {
+  background-color: #ffffff; /* Màu xanh lá nhạt */
+  border-color: #35453f; /* Viền xanh lá */
+}
+
+/* Card trạng thái chưa nhận phòng */
+.card.pending {
+  background-color: #ff8800; /* Màu vàng nhạt */
+  border-color: #f59e0b; /* Viền vàng */
+}
+
+/* Card trạng thái đang sử dụng */
+.card.in-use {
+  background-color: #14ba5f;
+  border-color: #279656; /* Viền đỏ */
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.card-title {
+  font-size: 20px; /* Tăng kích thước font */
+  font-weight: bold;
+  color: #242e3b; /* Màu chữ đậm hơn */
+}
+
+.card-badge {
+  padding: 6px 12px; /* Tăng kích thước padding */
+  border-radius: 16px; /* Bo góc tròn hơn */
+  font-size: 14px; /* Tăng kích thước font */
+  font-weight: bold;
+  color: white;
+}
+
+.card-badge.clean {
+  background-color: #279656;
+}
+
+.card-badge.dirty {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.card-content {
+  font-size: 16px; /* Tăng kích thước font */
+  color: #272626; /* Màu chữ trung tính */
+  line-height: 1.5; /* Tăng khoảng cách dòng */
+}
+
+.room-type {
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold; /* Chữ đậm */
+  color: #000000cc; /* Màu chữ đậm */
+  text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung quá dài */
+  overflow: hidden; /* Ẩn phần nội dung tràn */
+  white-space: nowrap; /* Không cho phép xuống dòng */
+}
+
+.card-footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #6b7280; /* Màu chữ nhạt */
+}
+
+.card-footer .price {
+  font-weight: bold;
+  color: #1f2937; /* Màu chữ đậm */
+}
+
+.card-footer .action {
+  padding: 6px 12px;
+  background-color: #3b82f6; /* Màu xanh dương */
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-footer .action:hover {
+  background-color: #2563eb; /* Màu xanh dương đậm hơn khi hover */
+}
+
+/* View toggle container */
+.view-toggle {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 8px;
+  padding: 4px; /* Thêm khoảng cách bên trong */
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+/* Toggle button */
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Khoảng cách giữa icon và chữ */
+  padding: 8px 16px;
+  border: 0px solid #ccc;
+  background-color: #f3f4f6;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #374151;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.toggle-button i {
+  font-size: 16px; /* Kích thước icon */
+}
+
+.toggle-button.active {
+  background-color: #279656; /* Màu xanh lá khi được chọn */
+  color: white;
+  border-color: #279656;
+}
+
+.toggle-button span {
+  display: none; /* Ẩn chữ mặc định */
+}
+
+.toggle-button.active span {
+  display: inline; /* Hiển thị chữ khi được chọn */
+}
+
+/* Table styles */
+.room-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.room-table th,
+.room-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.room-table th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+}
+
+.room-table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.room-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Container cho header table */
+.table .table-header {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 3fr 3fr 3fr 3fr 2fr; /* Tỷ lệ cột: Loại phòng (2 phần), Giá (1 phần mỗi cột) */
+  min-height: 48px;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: start;
+  background-color: #e9f5ee; /* Màu nền nhạt */
+  padding: 10px 16px; /* Khoảng cách bên trong */
+  border-radius: 12px; /* Bo góc */
+  font-weight: bolder; /* Chữ đậm */
+  color: #374151; /* Màu chữ */
+  border: 1px solid #beedc5; /* Viền nhạt */
+}
+
+/* Các span bên trong header */
+.table .table-header span {
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Table body */
+.booking-page .table .table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  max-height: 55vh;
+  min-height: 55vh;
+}
+
+/* Table row */
+.table .table-row {
+  display: grid; /* Sử dụng grid để căn chỉnh các cột */
+  grid-template-columns: 1fr 2fr 2fr 2fr 3fr 3fr 3fr 3fr 3fr 2fr;
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #ffffff; /* Màu nền trắng */
+  padding: 12px 16px; /* Khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  border: 1px solid #e5e7eb; /* Viền nhạt */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hiệu ứng khi hover */
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.table-row:hover {
+  background-color: #f9fafb; /* Màu nền khi hover */
+  box-shadow: 0 4px 8px rgba(4, 237, 78, 0.15); /* Bóng mờ đậm hơn khi hover */
+  transform: translateY(-1px); /* Hiệu ứng nổi lên khi hover */
+}
+
+.filter-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 200px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.filter-input:focus {
+  border-color: #39ac69;
+}
+
+/* Dropdown container */
+.booking-page .channel-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 16px; /* Khoảng cách giữa các kênh */
+}
+
+/* Hiển thị icon của kênh đã chọn */
+.booking-page .channel-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  transition: background-color 0.3s ease;
+  width: fit-content;
+  padding: 16px;
+  gap: 8px;
+}
+
+.booking-page .channel-selected:hover {
+  background-color: #e5e7eb;
+}
+
+/* Dropdown menu */
+.booking-page .channel-options {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 200px;
+  padding: 8px 0;
+}
+
+/* Dropdown option */
+.booking-page .channel-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-page .channel-option:hover {
+  background-color: #f3f4f6;
+}
+
+.booking-page .channel-option i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.booking-page .channel-option span {
+  font-size: 14px;
+  color: #374151;
+}
+
+.booking-page .button-access-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.booking-page .icon-button {
+  margin-left: auto;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.booking-page .dropdown-menu {
+  top: 100%;
+  right: 100%;
+}

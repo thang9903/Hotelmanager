@@ -1,0 +1,225 @@
+/* Header container */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  /* background-color: #319e3f; */
+  background: linear-gradient(to right, #319e3f, #2bb43d);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  gap: 16px; /* Khoảng cách giữa các phần tử trong header */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  padding-right: 32px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-image {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Tabs Container */
+.header-container .tabs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  margin: 0 32px;
+}
+
+/* Tab Item */
+.header-container .tab-item {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.header-container .tab-item:hover {
+  background-color: #f3f4f6; /* Màu nền khi hover */
+  color: #10b981; /* Màu chữ khi hover */
+
+  transform: translateY(-2px);
+}
+
+.header-container .tab-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-manager {
+  background-color: #48e064; /* Màu nền xanh lá */
+  color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-manager:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-manager:active {
+  transform: translateY(0);
+}
+/* User info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* User name */
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 70px;
+  right: 24px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes dropdownFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dropdown item */
+.dropdown-item {
+  padding: 10px 16px;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #319e3f;
+}
+
+/* Menu icon */
+.menu-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.menu-icon:hover {
+  color: #d1fae5;
+}
+
+/* Icon hình tròn */
+.icon-circle {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon-circle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(180deg);
+}
+
+.icon-circle i {
+  color: #ffffff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+  background-color: #2a9675; /* Màu nền khi hover */
+  transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
+}
